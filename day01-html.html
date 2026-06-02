@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դաս 1 - HTML Հիմունքներ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="container">
+      <div>
+        <div class="doc-meta" style="margin-bottom:10px">
+          <div class="doc-badge">WEB DEVELOPMENT</div>
+          <div class="doc-num">ԱՄԻՍ 01 · ԴԱՍ 01</div>
+        </div>
+        <div class="doc-title">HTML <span>Հիմունքներ</span></div>
+      </div>
+      <div class="doc-info">
+        <div class="doc-info-item">Տևողություն՝ 2 ժամ</div>
+        <div class="doc-info-item">Մակարդակ՝ Սկսնակ</div>
+        <div class="doc-info-item">Դասախոս՝ Մերի Վարդանյան</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի նպատակներ</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper goal-card">
+            <div class="goal-title">Այս դասից հետո կսովորենք՝</div>
+            <ul class="goal-list">
+              <li><span>Ինչ է HTML-ը և ինչու է այն կարևոր</span></li>
+              <li><span>Ինչ է թեգը, էլեմենտը և ատրիբուտը</span></li>
+              <li><span>Ինչպես է կառուցված HTML փաստաթղթի հիմնական կառուցվածքը</span></li>
+              <li><span>Ինչպես գրել առաջին HTML էջը VS Code-ում</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THEORY -->
+  <section id="theory">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ի՞նչ է HTML-ը</h2>
+            <p>HTML-ը <strong>HyperText Markup Language</strong>-ի հապավումն է, որը ծրագրավորման լեզու չի, այլ <strong>նշագրման լեզու</strong>՝ դու նկարագրում ես, թե ինչ պետք է լինի էջում, ոչ թե ինչ պետք է կատարվի</p>
+            <p>Ամեն կայք, որ բացում ես՝ անպայման ունի HTML։ Առանց դրա կայք պարզապես <strong>գոյություն չունի</strong>։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+            </div>
+            <h3>Թեգ</h3>
+            <p>Կոնկրետ հրաման, որում պետք է լինի բովանդակությունը (համապատասխան թեգի)։ Ունի բացվող և փակվող տարբերակներ։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
+            </div>
+            <h3>Էլեմենտ</h3>
+            <p>Բացվող թեգ + բովանդակություն + փակվող թեգ՝ ամբողջ «բլոկը» մի էլեմենտ է։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(82,229,160,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82 1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </div>
+            <h3>Ատրիբուտ</h3>
+            <p>Լրացուցիչ տեղեկություն թեգ-ի մեջ՝ օրինակ հղման հասցեն կամ նկարի գտնվելու հասցեն</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- STRUCTURE -->
+  <section id="structure">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>HTML-ի կառուցվածքը</h2>
+            <p>Ամեն HTML ֆայլ նույն կառուցվածքն է ունենում։ VS Code-ում <strong>! + Enter</strong> սեղմելով՝ ավտոմատ կստեղծվի։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">index.html</div>
+            </div>
+            <div class="code-body"><span class="c-comment">&lt;!-- Ասում ենք՝ սա HTML5 ֆայլ է --&gt;</span>
+<span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+
+<span class="c-comment">&lt;!-- Ամբողջ էջի «կոնտեյները» --&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+
+  <span class="c-comment">&lt;!-- Ուղեղ - բրաուզերի համար, օգտատեր չի տեսնում --&gt;</span>
+  <span class="c-tag">&lt;head&gt;</span>
+    <span class="c-tag">&lt;meta</span> <span class="c-attr">charset</span>=<span class="c-val">"UTF-8"</span><span class="c-tag">&gt;</span>
+    <span class="c-tag">&lt;title&gt;</span><span class="c-text">Իմ առաջին կայքը</span><span class="c-tag">&lt;/title&gt;</span>
+  <span class="c-tag">&lt;/head&gt;</span>
+
+  <span class="c-comment">&lt;!-- Մարմին - այն, ինչ օգտատերը տեսնում է --&gt;</span>
+  <span class="c-tag">&lt;body&gt;</span>
+    <span class="c-tag">&lt;h1&gt;</span><span class="c-text">Բարև, աշխարհ</span><span class="c-tag">&lt;/h1&gt;</span>
+    <span class="c-tag">&lt;p&gt;</span><span class="c-text">Սա իմ առաջին HTML էջն է։</span><span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;/body&gt;</span>
+
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Կարևոր.</strong> Ամեն բացվող թեգ պետք է փակվի։ <code style="font-family:var(--mono);color:var(--accent2)">&lt;h1&gt;</code> բացեցիր՝ <code style="font-family:var(--mono);color:var(--accent2)">&lt;/h1&gt;</code> փակիր։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TAGS TABLE -->
+  <section id="tags">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Այսօր ծանոթանում ենք այս թեգ-երին</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <table class="tag-table">
+              <thead>
+                <tr>
+                  <th>Թեգ</th>
+                  <th>ՆԿԱՐԱԳՐՈՒԹՅՈՒՆ</th>
+                  <th>ՕՐԻՆԱԿ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag-pill">&lt;h1&gt; - &lt;h6&gt;</span></td>
+                  <td><span class="tag-desc">Վերնագրեր - h1-ը ամենամեծն է, h6-ը՝ ամենափոքրը</span></td>
+                  <td><span class="tag-example">&lt;h1&gt;Վերնագիր&lt;/h1&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;p&gt;</span></td>
+                  <td><span class="tag-desc">Պարագրաֆ - տեքստային բլոկ</span></td>
+                  <td><span class="tag-example">&lt;p&gt;Տեքստ...&lt;/p&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;div&gt;</span></td>
+                  <td><span class="tag-desc">Բլոկային կոնտեյner՝ խմբավորման համար</span></td>
+                  <td><span class="tag-example">&lt;div&gt;...&lt;/div&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;span&gt;</span></td>
+                  <td><span class="tag-desc">Inline կոնտեյner՝ տողի ներսում</span></td>
+                  <td><span class="tag-example">&lt;span&gt;բառ&lt;/span&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;strong&gt;</span></td>
+                  <td><span class="tag-desc">Կարևոր տեքստ - հաստ է ցուցադրվում</span></td>
+                  <td><span class="tag-example">&lt;strong&gt;Կարևոր&lt;/strong&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;em&gt;</span></td>
+                  <td><span class="tag-desc">Շեշտված տեքստ - շեղ է ցուցադրվում</span></td>
+                  <td><span class="tag-example">&lt;em&gt;Շեղ&lt;/em&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;br&gt;</span></td>
+                  <td><span class="tag-desc">Տողի կոտրում - միայն բացվող թեգ (ավարտ չունի, քանի որ բովանդակություն չունի)</span></td>
+                  <td><span class="tag-example">&lt;br&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;hr&gt;</span></td>
+                  <td><span class="tag-desc">Հորիզոնական գիծ - բաժանիչ</span></td>
+                  <td><span class="tag-example">&lt;hr&gt;</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի ընթացքում կգրենք</h2>
+            <p>VS Code-ում ստեղծիր <strong>index.html</strong> ֆայլը և կրկնիր հետևյալ կոդը։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">index.html - Պրակտիկա</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;head&gt;</span>
+  <span class="c-tag">&lt;meta</span> <span class="c-attr">charset</span>=<span class="c-val">"UTF-8"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;title&gt;</span><span class="c-text">Իմ Անունը</span><span class="c-tag">&lt;/title&gt;</span>
+<span class="c-tag">&lt;/head&gt;</span>
+<span class="c-tag">&lt;body&gt;</span>
+
+  <span class="c-tag">&lt;h1&gt;</span><span class="c-text">Բարև, ես [քո անունը] եմ</span><span class="c-tag">&lt;/h1&gt;</span>
+  <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Web Developer</span><span class="c-tag">&lt;/h2&gt;</span>
+
+  <span class="c-tag">&lt;p&gt;</span><span class="c-text">Ես սովորում եմ web development։</span><span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;p&gt;</span><span class="c-text">Սա իմ <span class="c-tag">&lt;strong&gt;</span>առաջին<span class="c-tag">&lt;/strong&gt;</span> HTML էջն է։</span><span class="c-tag">&lt;/p&gt;</span>
+
+  <span class="c-tag">&lt;hr&gt;</span>
+
+  <span class="c-tag">&lt;h3&gt;</span><span class="c-text">Իմ հոբբիները</span><span class="c-tag">&lt;/h3&gt;</span>
+  <span class="c-tag">&lt;p&gt;</span><span class="c-text">Հոբբի 1</span><span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;p&gt;</span><span class="c-text">Հոբբի 2</span><span class="c-tag">&lt;/p&gt;</span>
+
+<span class="c-tag">&lt;/body&gt;</span>
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOMEWORK -->
+  <section id="homework">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տնային աշխատանք</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper hw-section">
+            <div class="hw-title">Տնային աշխատանք - Ինքնաներկայացում</div>
+            <div class="hw-sub">Ստեղծիր HTML էջ, որը ներկայացնում է քեզ։ Ոչ CSS, ոչ ոճավորում՝ միայն HTML թեգ-եր։</div>
+            <div class="hw-steps">
+              <div class="hw-step">
+                <div class="hw-num">01</div>
+                <div class="hw-step-text">Ստեղծիր <strong>about.html</strong> ֆայլը VS Code-ում</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">02</div>
+                <div class="hw-step-text">Ավելացրու <strong>h1</strong>՝ քո անունը, <strong>h2</strong>՝ քո մասնագիտությունը կամ ուսումնական կարգավիճակը</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">03</div>
+                <div class="hw-step-text">Ավելացրու <strong>2-3 պարագրաֆ</strong>՝ ով ես դու, ինչ ես անում, ինչու ես սովորում web development</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">04</div>
+                <div class="hw-step-text">Ավելացրու <strong>hr</strong> բաժանիչ, ապա <strong>h3</strong> + <strong>p</strong>՝ 3 բան, որ ուզում ես կառուցել 6 ամիս հետո</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">05</div>
+                <div class="hw-step-text">Օգտագործիր <strong>strong</strong> կամ <strong>em</strong> կարևոր բառերի համար</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer class="doc-footer">
+    <div class="container">
+      <div class="footer-name">Web Development Course · <span>Դաս 01</span></div>
+      <div class="footer-name">Մերի Վարդանյան · <span>2025</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>
