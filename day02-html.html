@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դաս 2 — HTML Տարրեր, Նկարներ, Հղումներ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="container">
+      <div>
+        <div class="doc-meta" style="margin-bottom:10px">
+          <div class="doc-badge">WEB DEVELOPMENT</div>
+          <div class="doc-num">ԱՄԻՍ 01 · ԴԱՍ 02</div>
+        </div>
+        <div class="doc-title">Տարրեր, Նկարներ, <span>Հղումներ</span></div>
+      </div>
+      <div class="doc-info">
+        <div class="doc-info-item">Տևողություն՝ 2 ժամ</div>
+        <div class="doc-info-item">Մակարդակ՝ Սկսնակ</div>
+        <div class="doc-info-item">Դասախոս՝ Մերի Վարդանյան</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի նպատակներ</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper goal-card">
+            <div class="goal-title">Այս դասից հետո հետևյալն ես սովորելու</div>
+            <ul class="goal-list">
+              <li><span>Ինչպես օգտագործել HTML-ի հիմնական տեքստային տարրերը</span></li>
+              <li><span>Ինչպես ավելացնել նկարներ էջում՝ &lt;img&gt; tag-ով</span></li>
+              <li><span>Ինչպես ստեղծել հղումներ՝ ներքին և արտաքին</span></li>
+              <li><span>Ինչ է relative path-ը և ինչ է absolute path-ը</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LINKS THEORY -->
+  <section id="links">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Հղումներ՝ &lt;a&gt; tag</h2>
+            <p>&lt;a&gt; tag-ը (anchor) օգտագործվում է մեկ էջից մյուսին անցնելու համար։ Ամենակարևոր attribute-ը <strong>href</strong>-ն է, որտեղ գրվում է հասցեն։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">links.html</div>
+            </div>
+            <div class="code-body"><span class="c-comment">&lt;!-- Արտաքին հղում --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://google.com"</span><span class="c-tag">&gt;</span><span class="c-text">Գնալ Google</span><span class="c-tag">&lt;/a&gt;</span>
+
+<span class="c-comment">&lt;!-- Նոր թաբում բացել --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://google.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span><span class="c-tag">&gt;</span><span class="c-text">Բացել նոր պատուհանում</span><span class="c-tag">&lt;/a&gt;</span>
+
+<span class="c-comment">&lt;!-- Ներքին հղում --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"about.html"</span><span class="c-tag">&gt;</span><span class="c-text">Իմ մասին</span><span class="c-tag">&lt;/a&gt;</span>
+
+<span class="c-comment">&lt;!-- Էլ. փոստ --&gt;</span>
+<span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"mailto:email@example.com"</span><span class="c-tag">&gt;</span><span class="c-text">Գրիր ինձ</span><span class="c-tag">&lt;/a&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Հիշիր.</strong> <code style="font-family:var(--mono);color:var(--accent2)">target="_blank"</code> ատրիբուտը բացում է հղումը նոր թաբում։ Ներքին հղումների դեպքում սովորաբար պետք չի։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- IMAGES -->
+  <section id="images">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ինչպես ավելացնել նկարներ</h2>
+            <p>&lt;img&gt;-ը ինքնափակ (self-closing) tag է։ Փակվող ձև չունի։ Պարտադիր <strong>src</strong> (source) և <strong>alt</strong> (ալտերնատիվ տեքստ) attribute-ներն են։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">images.html</div>
+            </div>
+            <div class="code-body"><span class="c-comment">&lt;!-- Տեղական նկար --&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"images/photo.jpg"</span> <span class="c-attr">alt</span>=<span class="c-val">"Իմ լուսանկարը"</span> <span class="c-attr">width</span>=<span class="c-val">"300"</span><span class="c-tag">&gt;</span>
+
+<span class="c-comment">&lt;!-- Արտաքին նկար --&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"https://site.com/logo.png"</span> <span class="c-attr">alt</span>=<span class="c-val">"Լոգո"</span><span class="c-tag">&gt;</span>
+
+<span class="c-comment">&lt;!-- alt-ը պարտադիր է — էկրանի Vorleser-ների համար --&gt;</span>
+<span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"banner.jpg"</span> <span class="c-attr">alt</span>=<span class="c-val">"Զեղչեր ամառվա համար"</span><span class="c-tag">&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+            </div>
+            <h3>Relative Path</h3>
+            <p>Ֆայլի հասցեն՝ HTML ֆայլի նկատմամբ։ Օրինակ՝ <code>images/photo.jpg</code> կամ <code>../logo.png</code> (մեկ թղթապանակ վերև)։</p>
+          </div>
+        </div>
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <h3>Absolute Path</h3>
+            <p>Լրիվ URL հասցե։ Օրինակ՝ <code>https://example.com/img.jpg</code>։ Չի կախված HTML ֆայլի տեղից։</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TAGS TABLE -->
+  <section id="tags">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Այսօր ծանոթանում ենք այս tag-երին</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <table class="tag-table">
+              <thead>
+                <tr>
+                  <th>TAG</th>
+                  <th>ՆԿԱՐԱԳՐՈՒԹՅՈՒՆ</th>
+                  <th>ՕՐԻՆԱԿ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag-pill">&lt;a&gt;</span></td>
+                  <td><span class="tag-desc">Հղում — anchor, href attribute-ով</span></td>
+                  <td><span class="tag-example">&lt;a href="url"&gt;Տեքստ&lt;/a&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;img&gt;</span></td>
+                  <td><span class="tag-desc">Նկար — ինքնափակ, src և alt պարտադիր</span></td>
+                  <td><span class="tag-example">&lt;img src="a.jpg" alt=""&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;ul&gt; + &lt;li&gt;</span></td>
+                  <td><span class="tag-desc">Անկանոն ցուցակ — unordered list</span></td>
+                  <td><span class="tag-example">&lt;ul&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ul&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;ol&gt; + &lt;li&gt;</span></td>
+                  <td><span class="tag-desc">Համարակալված ցուցակ — ordered list</span></td>
+                  <td><span class="tag-example">&lt;ol&gt;&lt;li&gt;...&lt;/li&gt;&lt;/ol&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;pre&gt;</span></td>
+                  <td><span class="tag-desc">Նախֆորմատավորված տեքստ — պահպանում է բացատները</span></td>
+                  <td><span class="tag-example">&lt;pre&gt;...&lt;/pre&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;code&gt;</span></td>
+                  <td><span class="tag-desc">Կոդի հատված — ինլայն կոդ</span></td>
+                  <td><span class="tag-example">&lt;code&gt;...&lt;/code&gt;</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի ընթացքում կգրենք</h2>
+            <p>VS Code-ում ստեղծիր <strong>portfolio.html</strong> ֆայլը և կրկնիր հետևյալ կոդը։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">portfolio.html — Պրակտիկա</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;head&gt;</span>
+  <span class="c-tag">&lt;meta</span> <span class="c-attr">charset</span>=<span class="c-val">"UTF-8"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;title&gt;</span><span class="c-text">Իմ Պորտֆոլիոն</span><span class="c-tag">&lt;/title&gt;</span>
+<span class="c-tag">&lt;/head&gt;</span>
+<span class="c-tag">&lt;body&gt;</span>
+
+  <span class="c-tag">&lt;h1&gt;</span><span class="c-text">Բարև, ես [քո անունը] եմ</span><span class="c-tag">&lt;/h1&gt;</span>
+
+  <span class="c-tag">&lt;img</span> <span class="c-attr">src</span>=<span class="c-val">"photo.jpg"</span> <span class="c-attr">alt</span>=<span class="c-val">"Իմ լուսանկարը"</span> <span class="c-attr">width</span>=<span class="c-val">"200"</span><span class="c-tag">&gt;</span>
+
+  <span class="c-tag">&lt;p&gt;</span><span class="c-text">Ես սովորում եմ <span class="c-tag">&lt;strong&gt;</span>Web Development<span class="c-tag">&lt;/strong&gt;</span>։</span><span class="c-tag">&lt;/p&gt;</span>
+
+  <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ հմտությունները</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;ul&gt;</span>
+    <span class="c-tag">&lt;li&gt;</span><span class="c-text">HTML</span><span class="c-tag">&lt;/li&gt;</span>
+    <span class="c-tag">&lt;li&gt;</span><span class="c-text">CSS</span><span class="c-tag">&lt;/li&gt;</span>
+    <span class="c-tag">&lt;li&gt;</span><span class="c-text">JavaScript</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;/ul&gt;</span>
+
+  <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Կապվիր ինձ հետ</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;p&gt;</span>
+    <span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://github.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span><span class="c-tag">&gt;</span><span class="c-text">GitHub</span><span class="c-tag">&lt;/a&gt;</span> <span class="c-tag">|</span>
+    <span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"mailto:email@example.com"</span><span class="c-tag">&gt;</span><span class="c-text">Email</span><span class="c-tag">&lt;/a&gt;</span>
+  <span class="c-tag">&lt;/p&gt;</span>
+
+<span class="c-tag">&lt;/body&gt;</span>
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOMEWORK -->
+  <section id="homework">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տնային աշխատանք</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper hw-section">
+            <div class="hw-title">Տնային աշխատանք — Մինի Պորտֆոլիո</div>
+            <div class="hw-sub">Ստեղծիր portfolio.html, որտեղ կլինեն նկարներ, հղումներ և ցուցակներ։</div>
+            <div class="hw-steps">
+              <div class="hw-step">
+                <div class="hw-num">01</div>
+                <div class="hw-step-text">Ստեղծիր <strong>portfolio.html</strong> և <strong>images/</strong> պանակ, որտեղ կդնես 2 նկար</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">02</div>
+                <div class="hw-step-text">Ավելացրու <strong>h1</strong>՝ քո անունը, և <strong>img</strong>՝ քո լուսանկարը (կամ placeholder)</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">03</div>
+                <div class="hw-step-text">Ստեղծիր <strong>ul</strong> կամ <strong>ol</strong> ցուցակ՝ քո 3 հմտություններով</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">04</div>
+                <div class="hw-step-text">Ավելացրու <strong>2 հղում</strong>՝ մեկը GitHub-ին (target="_blank"), մյուսը՝ about.html ֆայլին</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">05</div>
+                <div class="hw-step-text">Օգտագործիր <strong>alt</strong> ատրիբուտը բոլոր նկարների համար</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer class="doc-footer">
+    <div class="container">
+      <div class="footer-name">Web Development Course · <span>Դաս 02</span></div>
+      <div class="footer-name">Մերի Վարդանյան · <span>2025</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>
