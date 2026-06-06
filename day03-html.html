@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դաս 3 — Աղյուսակներ, Ցուցակներ, Ֆորմաներ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="container">
+      <div>
+        <div class="doc-meta" style="margin-bottom:10px">
+          <div class="doc-badge">WEB DEVELOPMENT</div>
+          <div class="doc-num">ԱՄԻՍ 01 · ԴԱՍ 03</div>
+        </div>
+        <div class="doc-title">Աղյուսակներ, Ցուցակներ, <span>Ֆորմաներ</span></div>
+      </div>
+      <div class="doc-info">
+        <div class="doc-info-item">Տևողություն՝ 2 ժամ</div>
+        <div class="doc-info-item">Մակարդակ՝ Սկսնակ</div>
+        <div class="doc-info-item">Դասախոս՝ Մերի Վարդանյան</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի նպատակներ</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper goal-card">
+            <div class="goal-title">Այս դասից հետո հետևյալն ես սովորելու</div>
+            <ul class="goal-list">
+              <li><span>Ինչպես ստեղծել աղյուսակներ՝ &lt;table&gt;, &lt;tr&gt;, &lt;td&gt;, &lt;th&gt;</span></li>
+              <li><span>Ինչպես օգտագործել ցուցակներ՝ &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;dl&gt;</span></li>
+              <li><span>Ինչպես ստեղծել ֆորմաներ՝ &lt;form&gt;, &lt;input&gt;, &lt;button&gt;</span></li>
+              <li><span>Ինչ է label-ը և ինչու է պետք յուրաքանչյուր input-ին</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TABLES -->
+  <section id="tables">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Աղյուսակներ՝ &lt;table&gt;</h2>
+            <p>Աղյուսակները օգտագործվում են տվյալներ կառուցվածքային ձևով ցուցադրելու համար։ Հիմնական tag-երն են՝ &lt;table&gt;, &lt;tr&gt; (տող), &lt;th&gt; (գլխագիր), &lt;td&gt; (վանդակ)։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">table.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;table&gt;</span>
+  <span class="c-tag">&lt;tr&gt;</span>
+    <span class="c-tag">&lt;th&gt;</span><span class="c-text">Անուն</span><span class="c-tag">&lt;/th&gt;</span>
+    <span class="c-tag">&lt;th&gt;</span><span class="c-text">Տարիք</span><span class="c-tag">&lt;/th&gt;</span>
+    <span class="c-tag">&lt;th&gt;</span><span class="c-text">Քաղաք</span><span class="c-tag">&lt;/th&gt;</span>
+  <span class="c-tag">&lt;/tr&gt;</span>
+  <span class="c-tag">&lt;tr&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">Աննա</span><span class="c-tag">&lt;/td&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">25</span><span class="c-tag">&lt;/td&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">Երևան</span><span class="c-tag">&lt;/td&gt;</span>
+  <span class="c-tag">&lt;/tr&gt;</span>
+  <span class="c-tag">&lt;tr&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">Արմեն</span><span class="c-tag">&lt;/td&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">30</span><span class="c-tag">&lt;/td&gt;</span>
+    <span class="c-tag">&lt;td&gt;</span><span class="c-text">Գյումրի</span><span class="c-tag">&lt;/td&gt;</span>
+  <span class="c-tag">&lt;/tr&gt;</span>
+<span class="c-tag">&lt;/table&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Հիշիր.</strong> Աղյուսակներն ավելի լավ է օգտագործել <strong>տվյալների</strong> համար, ոչ թե էջի դասավորության։ Դասավորության համար հետո կսովորենք CSS-ը։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LISTS -->
+  <section id="lists">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ցուցակներ</h2>
+            <p>HTML-ում կան 3 տեսակի ցուցակներ։ ul-ը կետերով է, ol-ը՝ համարակալված, dl-ը՝ սահմանումների ցուցակ։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+            </div>
+            <h3>&lt;ul&gt; — Անկանոն</h3>
+            <p>Կետերով ցուցակ։ Օգտագործվում է, երբ հերթականությունը կարևոր չէ։</p>
+          </div>
+        </div>
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="10" y1="6" x2="21" y2="6"></line><line x1="10" y1="12" x2="21" y2="12"></line><line x1="10" y1="18" x2="21" y2="18"></line><path d="M4 6h1v4"></path><path d="M4 10h1v4"></path><path d="M4 14h1v4"></path></svg>
+            </div>
+            <h3>&lt;ol&gt; — Համարակալված</h3>
+            <p>Համարներով ցուցակ։ Օգտագործվում է, երբ հերթականությունը կարևոր է։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">lists.html</div>
+            </div>
+            <div class="code-body"><span class="c-comment">&lt;!-- Անկանոն ցուցակ --&gt;</span>
+<span class="c-tag">&lt;ul&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">HTML</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">CSS</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">JavaScript</span><span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ul&gt;</span>
+
+<span class="c-comment">&lt;!-- Համարակալված ցուցակ --&gt;</span>
+<span class="c-tag">&lt;ol&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Միացնել համակարգիչը</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Բացել VS Code-ը</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;li&gt;</span><span class="c-text">Ստեղծել index.html</span><span class="c-tag">&lt;/li&gt;</span>
+<span class="c-tag">&lt;/ol&gt;</span>
+
+<span class="c-comment">&lt;!-- Սահմանումների ցուցակ --&gt;</span>
+<span class="c-tag">&lt;dl&gt;</span>
+  <span class="c-tag">&lt;dt&gt;</span><span class="c-text">HTML</span><span class="c-tag">&lt;/dt&gt;</span>
+  <span class="c-tag">&lt;dd&gt;</span><span class="c-text">Վեբ էջերի նշագրման լեզու</span><span class="c-tag">&lt;/dd&gt;</span>
+  <span class="c-tag">&lt;dt&gt;</span><span class="c-text">CSS</span><span class="c-tag">&lt;/dt&gt;</span>
+  <span class="c-tag">&lt;dd&gt;</span><span class="c-text">Վեբ էջերի ոճավորման լեզու</span><span class="c-tag">&lt;/dd&gt;</span>
+<span class="c-tag">&lt;/dl&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FORMS -->
+  <section id="forms">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ֆորմաներ՝ &lt;form&gt;</h2>
+            <p>Ֆորմաները օգտագործվում են օգտատերերից տվյալներ ստանալու համար։ Հիմնական tag-երը՝ &lt;form&gt;, &lt;input&gt;, &lt;label&gt;, &lt;button&gt;, &lt;textarea&gt;, &lt;select&gt;։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">form.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;form</span> <span class="c-attr">action</span>=<span class="c-val">"/submit"</span> <span class="c-attr">method</span>=<span class="c-val">"POST"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"name"</span><span class="c-tag">&gt;</span><span class="c-text">Անուն</span><span class="c-tag">&lt;/label&gt;</span>
+  <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"text"</span> <span class="c-attr">id</span>=<span class="c-val">"name"</span> <span class="c-attr">name</span>=<span class="c-val">"name"</span><span class="c-tag">&gt;</span>
+
+  <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"email"</span><span class="c-tag">&gt;</span><span class="c-text">Էլ. փոստ</span><span class="c-tag">&lt;/label&gt;</span>
+  <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"email"</span> <span class="c-attr">id</span>=<span class="c-val">"email"</span> <span class="c-attr">name</span>=<span class="c-val">"email"</span><span class="c-tag">&gt;</span>
+
+  <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"message"</span><span class="c-tag">&gt;</span><span class="c-text">Հաղորդագրություն</span><span class="c-tag">&lt;/label&gt;</span>
+  <span class="c-tag">&lt;textarea</span> <span class="c-attr">id</span>=<span class="c-val">"message"</span> <span class="c-attr">name</span>=<span class="c-val">"message"</span><span class="c-tag">&gt;&lt;/textarea&gt;</span>
+
+  <span class="c-tag">&lt;button</span> <span class="c-attr">type</span>=<span class="c-val">"submit"</span><span class="c-tag">&gt;</span><span class="c-text">Ուղարկել</span><span class="c-tag">&lt;/button&gt;</span>
+<span class="c-tag">&lt;/form&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Կարևոր.</strong> <strong>label</strong>-ը պարտադիր է ամեն input-ի համար։ Այն օգնում է screen reader-ներին և բջջային օգտատերերին՝ ավելի մեծ տարածք սեղմելու համար։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի ընթացքում կգրենք</h2>
+            <p>VS Code-ում ստեղծիր <strong>contact.html</strong> ֆայլը և կրկնիր հետևյալ կոդը։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">contact.html — Պրակտիկա</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;head&gt;</span>
+  <span class="c-tag">&lt;meta</span> <span class="c-attr">charset</span>=<span class="c-val">"UTF-8"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;title&gt;</span><span class="c-text">Կապ</span><span class="c-tag">&lt;/title&gt;</span>
+<span class="c-tag">&lt;/head&gt;</span>
+<span class="c-tag">&lt;body&gt;</span>
+
+  <span class="c-tag">&lt;h1&gt;</span><span class="c-text">Կապվիր ինձ հետ</span><span class="c-tag">&lt;/h1&gt;</span>
+
+  <span class="c-tag">&lt;form&gt;</span>
+    <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"name"</span><span class="c-tag">&gt;</span><span class="c-text">Անուն</span><span class="c-tag">&lt;/label&gt;</span>
+    <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"text"</span> <span class="c-attr">id</span>=<span class="c-val">"name"</span> <span class="c-attr">name</span>=<span class="c-val">"name"</span><span class="c-tag">&gt;</span>
+
+    <span class="c-tag">&lt;label</span> <span class="c-attr">for</span>=<span class="c-val">"email"</span><span class="c-tag">&gt;</span><span class="c-text">Էլ. փոստ</span><span class="c-tag">&lt;/label&gt;</span>
+    <span class="c-tag">&lt;input</span> <span class="c-attr">type</span>=<span class="c-val">"email"</span> <span class="c-attr">id</span>=<span class="c-val">"email"</span> <span class="c-attr">name</span>=<span class="c-val">"email"</span><span class="c-tag">&gt;</span>
+
+    <span class="c-tag">&lt;button</span> <span class="c-attr">type</span>=<span class="c-val">"submit"</span><span class="c-tag">&gt;</span><span class="c-text">Ուղարկել</span><span class="c-tag">&lt;/button&gt;</span>
+  <span class="c-tag">&lt;/form&gt;</span>
+
+  <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ սոցիալական ցանցերը</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;ul&gt;</span>
+    <span class="c-tag">&lt;li&gt;</span><span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://github.com"</span><span class="c-tag">&gt;</span><span class="c-text">GitHub</span><span class="c-tag">&lt;/a&gt;</span><span class="c-tag">&lt;/li&gt;</span>
+    <span class="c-tag">&lt;li&gt;</span><span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"https://linkedin.com"</span><span class="c-tag">&gt;</span><span class="c-text">LinkedIn</span><span class="c-tag">&lt;/a&gt;</span><span class="c-tag">&lt;/li&gt;</span>
+  <span class="c-tag">&lt;/ul&gt;</span>
+
+<span class="c-tag">&lt;/body&gt;</span>
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOMEWORK -->
+  <section id="homework">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տնային աշխատանք</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper hw-section">
+            <div class="hw-title">Տնային աշխատանք — Կապի էջ</div>
+            <div class="hw-sub">Ստեղծիր contact.html, որտեղ կլինեն աղյուսակ, ցուցակ և ֆորմա։</div>
+            <div class="hw-steps">
+              <div class="hw-step">
+                <div class="hw-num">01</div>
+                <div class="hw-step-text">Ստեղծիր <strong>contact.html</strong> ֆայլը VS Code-ում</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">02</div>
+                <div class="hw-step-text">Ավելացրու <strong>table</strong>՝ 3 սյունով և 3 տողով (օրինակ՝ ընկերների ցուցակ)</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">03</div>
+                <div class="hw-step-text">Ավելացրու <strong>ol</strong> ցուցակ՝ քո 5 սիրելի ֆիլմերով կամ գրքերով</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">04</div>
+                <div class="hw-step-text">Ստեղծիր <strong>form</strong>՝ անուն, էլ. փոստ և հաղորդագրություն դաշտերով</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">05</div>
+                <div class="hw-step-text">Օգտագործիր <strong>label</strong> յուրաքանչյուր input-ի համար</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer class="doc-footer">
+    <div class="container">
+      <div class="footer-name">Web Development Course · <span>Դաս 03</span></div>
+      <div class="footer-name">Մերի Վարդանյան · <span>2025</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>
