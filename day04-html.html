@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դաս 4 — Semantic HTML</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="container">
+      <div>
+        <div class="doc-meta" style="margin-bottom:10px">
+          <div class="doc-badge">WEB DEVELOPMENT</div>
+          <div class="doc-num">ԱՄԻՍ 01 · ԴԱՍ 04</div>
+        </div>
+        <div class="doc-title">Semantic <span>HTML</span></div>
+      </div>
+      <div class="doc-info">
+        <div class="doc-info-item">Տևողություն՝ 2 ժամ</div>
+        <div class="doc-info-item">Մակարդակ՝ Սկսնակ</div>
+        <div class="doc-info-item">Դասախոս՝ Մերի Վարդանյան</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի նպատակներ</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper goal-card">
+            <div class="goal-title">Այս դասից հետո հետևյալն ես սովորելու</div>
+            <ul class="goal-list">
+              <li><span>Ինչ է semantic HTML-ը և ինչու է կարևոր</span></li>
+              <li><span>Որ թեգերն են semantic և որոնք՝ ոչ</span></li>
+              <li><span>Ինչպես կառուցել էջի կառուցվածքը semantic թեգերով</span></li>
+              <li><span>Ինչպես semantic HTML-ը ազդում է SEO-ի և հասանելիության վրա</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THEORY -->
+  <section id="theory">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ի՞նչ է Semantic HTML-ը</h2>
+            <p>Semantic նշանակում է «իմաստային»։ Semantic HTML-ում յուրաքանչյուր թեգ իրենից բացի տեխնիկական դեր է խաղում, նաև <strong>իմաստ</strong> է հաղորդում։</p>
+            <p>Օրինակ՝ &lt;div&gt;-ը պարզապես կոնտեյներ է, իսկ &lt;header&gt;-ը ասում է՝ «սա էջի կամ բաժնի գլուխն է»։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            </div>
+            <h3>SEO</h3>
+            <p>Որոնողական համակարգերն ավելի լավ են հասկանում էջի կառուցվածքը, երբ օգտագործվում են semantic թեգեր։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20h-3a2 2 0 0 1-2-2V9a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v9a2 2 0 0 1-2 2H2"></path><path d="M2 20h20"></path><path d="M14 9V5a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v4"></path><path d="M18 9V3a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v6"></path></svg>
+            </div>
+            <h3>Հասանելիություն</h3>
+            <p>Screen reader-ները կարդում են էջի կառուցվածքը։ Semantic թեգերը օգնում են կույր օգտատերերին կողմնորոշվել։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(82,229,160,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3>Աշխատանքի որակ</h3>
+            <p>Որքան semantic է կոդը, այնքան ավելի հեշտ է հասկանալ և պահպանել այն՝ և՛ քեզ համար, և՛ թիմի մյուս անդամների։</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- STRUCTURE -->
+  <section id="structure">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Semantic թեգերից կառուցված էջ</h2>
+            <p>Ահա թե ինչպես պետք է կառուցվի կայքի HTML-ը՝ առանց ավելորդ &lt;div&gt;-երի։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">semantic.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;head&gt;</span>...<span class="c-tag">&lt;/head&gt;</span>
+<span class="c-tag">&lt;body&gt;</span>
+
+  <span class="c-tag">&lt;header&gt;</span>
+    <span class="c-tag">&lt;nav&gt;</span>...<span class="c-tag">&lt;/nav&gt;</span>
+  <span class="c-tag">&lt;/header&gt;</span>
+
+  <span class="c-tag">&lt;main&gt;</span>
+    <span class="c-tag">&lt;article&gt;</span>
+      <span class="c-tag">&lt;section&gt;</span>...<span class="c-tag">&lt;/section&gt;</span>
+    <span class="c-tag">&lt;/article&gt;</span>
+  <span class="c-tag">&lt;/main&gt;</span>
+
+  <span class="c-tag">&lt;aside&gt;</span>...<span class="c-tag">&lt;/aside&gt;</span>
+
+  <span class="c-tag">&lt;footer&gt;</span>...<span class="c-tag">&lt;/footer&gt;</span>
+
+<span class="c-tag">&lt;/body&gt;</span>
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Հիշիր.</strong> &lt;div&gt;-ը դեռ պետք է լինի՝ որպես ոճավորման կոնտեյներ, բայց էջի <strong>կառուցվածքը</strong> պետք է հենվի semantic թեգերի վրա։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TAGS TABLE -->
+  <section id="tags">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Այսօր ծանոթանում ենք այս թեգերին</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <table class="tag-table">
+              <thead>
+                <tr>
+                  <th>TAG</th>
+                  <th>ՆԿԱՐԱԳՐՈՒԹՅՈՒՆ</th>
+                  <th>ՕՐԻՆԱԿ</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="tag-pill">&lt;header&gt;</span></td>
+                  <td><span class="tag-desc">Էջի կամ բաժնի գլուխ՝ լոգո, վերնագիր, նավիգացիա</span></td>
+                  <td><span class="tag-example">&lt;header&gt;...&lt;/header&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;nav&gt;</span></td>
+                  <td><span class="tag-desc">Նավիգացիոն հղումների բլոկ</span></td>
+                  <td><span class="tag-example">&lt;nav&gt;&lt;a&gt;...&lt;/a&gt;&lt;/nav&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;main&gt;</span></td>
+                  <td><span class="tag-desc">Էջի հիմնական բովանդակությունը՝ մեկ էջում միայն մեկ &lt;main&gt;</span></td>
+                  <td><span class="tag-example">&lt;main&gt;...&lt;/main&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;article&gt;</span></td>
+                  <td><span class="tag-desc">Ինքնուրույն բովանդակություն՝ գրառում, նորություն</span></td>
+                  <td><span class="tag-example">&lt;article&gt;...&lt;/article&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;section&gt;</span></td>
+                  <td><span class="tag-desc">Թեմատիկ բաժին՝ իր վերնագրով</span></td>
+                  <td><span class="tag-example">&lt;section&gt;...&lt;/section&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;aside&gt;</span></td>
+                  <td><span class="tag-desc">Կողային բլոկ՝ կապված, բայց առանձին բովանդակություն</span></td>
+                  <td><span class="tag-example">&lt;aside&gt;...&lt;/aside&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;footer&gt;</span></td>
+                  <td><span class="tag-desc">Վերջաբան՝ հեղինակային իրավունք, կոնտակտներ</span></td>
+                  <td><span class="tag-example">&lt;footer&gt;...&lt;/footer&gt;</span></td>
+                </tr>
+                <tr>
+                  <td><span class="tag-pill">&lt;figure&gt; + &lt;figcaption&gt;</span></td>
+                  <td><span class="tag-desc">Նկար կամ դիագրամ՝ իր բացատրությամբ</span></td>
+                  <td><span class="tag-example">&lt;figure&gt;&lt;img&gt;&lt;figcaption&gt;...&lt;/figcaption&gt;&lt;/figure&gt;</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- SECTION EXPLANATION -->
+  <section id="section-tag">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>&lt;section&gt; — Թեմատիկ բաժին</h2>
+            <p>&lt;section&gt;-ը օգտագործվում է <strong>թեմատիկ բովանդակություն</strong> խմբավորելու համար։ Յուրաքանչյուր &lt;section&gt; պետք է ունենա իր <strong>վերնագիր</strong> (h2-h6) և ինքնուրույն իմաստ՝ առանձին հանված կարդալի լինի։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Ե՞րբ օգտագործել &lt;section&gt;</h3>
+            <p>Երբ էջում կան առանձին թեմատիկ բլոկներ՝ յուրաքանչյուրը իր վերնագրով։ Օրինակ՝ «Իմ մասին», «Հմտություններ», «Փորձ»։</p>
+          </div>
+        </div>
+        <div class="col w-50">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            </div>
+            <h3>&lt;section&gt; vs &lt;article&gt;</h3>
+            <p>&lt;article&gt;-ը <strong>ինքնուրույն</strong> է (կարող է առանձին հանվել)։ &lt;section&gt;-ը <strong>կապված</strong> է մնացած բովանդակության հետ։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">section-example.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;main&gt;</span>
+  <span class="c-comment">&lt;!-- Յուրաքանչյուր section ունի իր վերնագիր --&gt;</span>
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ մասին</span><span class="c-tag">&lt;/h2&gt;</span>
+    <span class="c-tag">&lt;p&gt;</span><span class="c-text">...տեքստ...</span><span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ հմտությունները</span><span class="c-tag">&lt;/h2&gt;</span>
+    <span class="c-tag">&lt;ul&gt;</span>...<span class="c-tag">&lt;/ul&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Կապ</span><span class="c-tag">&lt;/h2&gt;</span>
+    <span class="c-tag">&lt;form&gt;</span>...<span class="c-tag">&lt;/form&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+<span class="c-tag">&lt;/main&gt;</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>Կարևոր կանոն.</strong> Մի՛ օգտագործիր &lt;section&gt; պարզապես ոճավորման համար։ Դրա համար կա &lt;div&gt;-ը։ &lt;section&gt;-ը պետք է <strong>իմաստ</strong> հաղորդի՝ թեմատիկ բաժին լինելով։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COMPARISON -->
+  <section id="comparison">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Div-կապոց vs Semantic</h2>
+            <p>Ահա նույն կառուցվածքը՝ նախ՝ &lt;div&gt;-երով, հետո՝ semantic թեգերով։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-50">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">div-soup.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"header"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/div&gt;</span>
+
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"main"</span><span class="c-tag">&gt;</span>
+  <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"about"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/div&gt;</span>
+  <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"skills"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/div&gt;</span>
+  <span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"contact"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/div&gt;</span>
+<span class="c-tag">&lt;/div&gt;</span>
+
+<span class="c-tag">&lt;div</span> <span class="c-attr">class</span>=<span class="c-val">"footer"</span><span class="c-tag">&gt;</span>...<span class="c-tag">&lt;/div&gt;</span></div>
+          </div>
+        </div>
+        <div class="col w-50">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">semantic.html</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;header&gt;</span>...<span class="c-tag">&lt;/header&gt;</span>
+
+<span class="c-tag">&lt;main&gt;</span>
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ մասին</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Հմտություններ</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+
+  <span class="c-tag">&lt;section&gt;</span>
+    <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Կապ</span><span class="c-tag">&lt;/h2&gt;</span>
+  <span class="c-tag">&lt;/section&gt;</span>
+<span class="c-tag">&lt;/main&gt;</span>
+
+<span class="c-tag">&lt;footer&gt;</span>...<span class="c-tag">&lt;/footer&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի ընթացքում կգրենք</h2>
+            <p>VS Code-ում վերցրու առաջին դասի about.html-ը և վերափոխիր այն semantic թեգերով։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">about-semantic.html — Պրակտիկա</div>
+            </div>
+            <div class="code-body"><span class="c-tag">&lt;!DOCTYPE html&gt;</span>
+<span class="c-tag">&lt;html</span> <span class="c-attr">lang</span>=<span class="c-val">"hy"</span><span class="c-tag">&gt;</span>
+<span class="c-tag">&lt;head&gt;</span>...<span class="c-tag">&lt;/head&gt;</span>
+<span class="c-tag">&lt;body&gt;</span>
+
+  <span class="c-tag">&lt;header&gt;</span>
+    <span class="c-tag">&lt;h1&gt;</span><span class="c-text">Բարև, ես Աննան եմ</span><span class="c-tag">&lt;/h1&gt;</span>
+    <span class="c-tag">&lt;nav&gt;</span>
+      <span class="c-tag">&lt;a</span> <span class="c-attr">href</span>=<span class="c-val">"index.html"</span><span class="c-tag">&gt;</span><span class="c-text">Գլխավոր</span><span class="c-tag">&lt;/a&gt;</span>
+    <span class="c-tag">&lt;/nav&gt;</span>
+  <span class="c-tag">&lt;/header&gt;</span>
+
+  <span class="c-tag">&lt;main&gt;</span>
+    <span class="c-tag">&lt;section&gt;</span>
+      <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ մասին</span><span class="c-tag">&lt;/h2&gt;</span>
+      <span class="c-tag">&lt;p&gt;</span><span class="c-text">...տեքստ...</span><span class="c-tag">&lt;/p&gt;</span>
+    <span class="c-tag">&lt;/section&gt;</span>
+
+    <span class="c-tag">&lt;section&gt;</span>
+      <span class="c-tag">&lt;h2&gt;</span><span class="c-text">Իմ հոբբիները</span><span class="c-tag">&lt;/h2&gt;</span>
+      <span class="c-tag">&lt;ul&gt;</span>...<span class="c-tag">&lt;/ul&gt;</span>
+    <span class="c-tag">&lt;/section&gt;</span>
+  <span class="c-tag">&lt;/main&gt;</span>
+
+  <span class="c-tag">&lt;footer&gt;</span>
+    <span class="c-tag">&lt;p&gt;</span><span class="c-text">Ստեղծված 2025</span><span class="c-tag">&lt;/p&gt;</span>
+  <span class="c-tag">&lt;/footer&gt;</span>
+
+<span class="c-tag">&lt;/body&gt;</span>
+<span class="c-tag">&lt;/html&gt;</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOMEWORK -->
+  <section id="homework">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տնային աշխատանք</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper hw-section">
+            <div class="hw-title">Տնային աշխատանք — Semantic Պորտֆոլիո</div>
+            <div class="hw-sub">Վերցրու առաջին 3 դասերի աշխատանքները և վերափոխիր semantic թեգերով։</div>
+            <div class="hw-steps">
+              <div class="hw-step">
+                <div class="hw-num">01</div>
+                <div class="hw-step-text">Վերցրու <strong>portfolio.html</strong>-ը (դաս 2)</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">02</div>
+                <div class="hw-step-text">Փոխարինիր &lt;div&gt;-երը &lt;header&gt;, &lt;main&gt;, &lt;section&gt;, &lt;footer&gt;-ով, որտեղ հնարավոր է</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">03</div>
+                <div class="hw-step-text">Ավելացրու &lt;nav&gt; հղումների համար</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">04</div>
+                <div class="hw-step-text">Օգտագործիր &lt;figure&gt; և &lt;figcaption&gt; նկարի և նկարագրության համար</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">05</div>
+                <div class="hw-step-text">Ստուգիր validator.w3.org-ով՝ արդյոք HTML-ը ճիշտ է</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer class="doc-footer">
+    <div class="container">
+      <div class="footer-name">Web Development Course · <span>Դաս 04</span></div>
+      <div class="footer-name">Մերի Վարդանյան · <span>2025</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>
