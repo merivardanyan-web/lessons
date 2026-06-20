@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Դաս 9 — Flexbox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+Armenian:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/lessons.css">
+  <script src="js/lessons.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="doc-header">
+    <div class="container">
+      <div>
+        <div class="doc-meta" style="margin-bottom:10px">
+          <div class="doc-badge">WEB DEVELOPMENT</div>
+          <div class="doc-num">ԱՄԻՍ 01 · ԴԱՍ 09</div>
+        </div>
+        <div class="doc-title">CSS <span>Flexbox</span></div>
+      </div>
+      <div class="doc-info">
+        <div class="doc-info-item">Տևողություն՝ 2 ժամ</div>
+        <div class="doc-info-item">Մակարդակ՝ Սկսնակ</div>
+        <div class="doc-info-item">Դասախոս՝ Մերի Վարդանյան</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- GOALS -->
+  <section id="goals">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի նպատակներ</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper goal-card">
+            <div class="goal-title">Այս դասից հետո հետևյալն ես սովորելու</div>
+            <ul class="goal-list">
+              <li><span>Ինչ է Flexbox-ը և ինչու է այն CSS-ի ամենակարևոր գործիքը</span></li>
+              <li><span>Ինչպես դարձնել ծնողը flex-կոնտեյներ՝ <code>display: flex</code>-ով</span></li>
+              <li><span>Ինչպես հավասարեցնել տարրերը հորիզոնально՝ <code>justify-content</code>-ով</span></li>
+              <li><span>Ինչպես հավասարեցնել տարրերը ուղղահայաց՝ <code>align-items</code>-ով</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- THEORY -->
+  <section id="theory">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Ի՞նչ է Flexbox-ը</h2>
+            <p>CSS-ում տարրերը լռելյայն բաշխվում են <strong>բլոկային</strong> (block) կամ <strong>տողային</strong> (inline)։ Բլոկային տարրերը յուրաքանչյուրը իր տողում են, իսկ տողայինը՝ կողք կողքի, բայց չափերով կառավարել չես կարող։</p>
+            <p>Flexbox-ը (Flexible Box) CSS-ի <strong>դասավորության մոդել</strong> է, որը թույլ է տալիս ծնողին (parent) վերահսկել, թե որդիները (children) ինչպես են բաշխվում տարածության մեջ։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            </div>
+            <h3>Ծնողը (Container)</h3>
+            <p>Սա էջի բաժինն է, որին ավելացնում ես <code>display: flex;</code>։ Նա ակտիվացնում է Flexbox մոդելն իր բոլոր երեխաների համար։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </div>
+            <h3>Երեխաները (Items)</h3>
+            <p>Կոնտեյների ներսում գտնվող տարրերը։ Լռելյայն իրար կողք են դնվում և կարող են ձգվել կամ սեղմվել՝ ըստ կոնտեյների չափի։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(82,229,160,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+            </div>
+            <h3>Main Axis</h3>
+            <p>Հիմնական առանցք, որով բաշխվում են տարրերը։ Լռելյայն՝ <strong>ձախից աջ</strong> (row)։ Փոխում է <code>flex-direction</code>-ով։</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- JUSTIFY CONTENT -->
+  <section id="justify-content">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>justify-content — Հորիզոնական դասավորություն</h2>
+            <p>Այս հատկությունը վերահսկում է, թե ինչպես են տարրերը բաշխվում <strong>հիմնական առանցքով</strong> (լռելյայն՝ ձախից աջ)։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">justify.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.container</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">justify-content</span>: <span class="c-val">center</span>;    <span class="c-comment">/* կենտրոն */</span>
+  <span class="c-attr">justify-content</span>: <span class="c-val">flex-start</span>; <span class="c-comment">/* ձախ (լռելյայն) */</span>
+  <span class="c-attr">justify-content</span>: <span class="c-val">flex-end</span>;   <span class="c-comment">/* աջ */</span>
+  <span class="c-attr">justify-content</span>: <span class="c-val">space-between</span>; <span class="c-comment">/* հավասար բացում */</span>
+  <span class="c-attr">justify-content</span>: <span class="c-val">space-around</span>; <span class="c-comment">/* բացում եզրերին */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h3>Տեսողական համեմատություն</h3>
+            <div style="margin-top:16px; display:flex; flex-direction:column; gap:16px;">
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">flex-start (լռելյայն)</p>
+                <div style="display:flex; justify-content:flex-start; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">center</p>
+                <div style="display:flex; justify-content:center; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">flex-end</p>
+                <div style="display:flex; justify-content:flex-end; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">space-between</p>
+                <div style="display:flex; justify-content:space-between; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">space-around</p>
+                <div style="display:flex; justify-content:space-around; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ALIGN ITEMS -->
+  <section id="align-items">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>align-items — Ուղղահայաց դասավորություն</h2>
+            <p>Այս հատկությունը վերահսկում է, թե ինչպես են տարրերը հավասարվում <strong>ընդհանուր առանցքով</strong> (ուղղահայաց)։ Աշխատում է միայն այն դեպքում, երբ կոնտեյներն ունի <strong>բարձրություն</strong>։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">align.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.container</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">height</span>: <span class="c-val">200px</span>;
+  <span class="c-attr">align-items</span>: <span class="c-val">center</span>;     <span class="c-comment">/* կենտրոն (ուղղահայաց) */</span>
+  <span class="c-attr">align-items</span>: <span class="c-val">flex-start</span>; <span class="c-comment">/* վերև */</span>
+  <span class="c-attr">align-items</span>: <span class="c-val">flex-end</span>;   <span class="c-comment">/* ներքև */</span>
+  <span class="c-attr">align-items</span>: <span class="c-val">stretch</span>;    <span class="c-comment">/* ձգում (լռելյայն) */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h3>Տեսողական համեմատություն</h3>
+            <div style="margin-top:16px; display:flex; flex-direction:column; gap:16px;">
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">align-items: flex-start</p>
+                <div style="display:flex; align-items:flex-start; gap:8px; padding:12px; height:100px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:60px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:30px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">align-items: center</p>
+                <div style="display:flex; align-items:center; gap:8px; padding:12px; height:100px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:60px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:30px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">align-items: flex-end</p>
+                <div style="display:flex; align-items:flex-end; gap:8px; padding:12px; height:100px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; height:60px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; height:30px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+              <div>
+                <p style="font-size:0.8rem; color:var(--text3); margin-bottom:6px; font-family:var(--mono);">align-items: stretch (լռելյայն)</p>
+                <div style="display:flex; align-items:stretch; gap:8px; padding:12px; height:100px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+                  <div style="width:40px; background:#5b7fff; border-radius:6px;"></div>
+                  <div style="width:40px; background:#6c5ce7; border-radius:6px;"></div>
+                  <div style="width:40px; background:#00b894; border-radius:6px;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FLEX DIRECTION -->
+  <section id="flex-direction">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>flex-direction — Առանցքի ուղղությունը</h2>
+            <p>Փոխում է հիմնական առանցքի ուղղությունը։ Լռելյայն <code>row</code>-ն է՝ ձախից աջ։ <code>column</code>-ով տարրերը դասավորվում են վերևից ներքև։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">direction.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.container</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">flex-direction</span>: <span class="c-val">row</span>;         <span class="c-comment">/* ձախ → աջ (լռելյայն) */</span>
+  <span class="c-attr">flex-direction</span>: <span class="c-val">row-reverse</span>; <span class="c-comment">/* աջ → ձախ */</span>
+  <span class="c-attr">flex-direction</span>: <span class="c-val">column</span>;      <span class="c-comment">/* վերև → ներքև */</span>
+  <span class="c-attr">flex-direction</span>: <span class="c-val">column-reverse</span>; <span class="c-comment">/* ներքև → վերև */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-50">
+          <div class="wrapper">
+            <p style="font-size:0.8rem; color:var(--text3); margin-bottom:8px; font-family:var(--mono);">row</p>
+            <div style="display:flex; flex-direction:row; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px;">
+              <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+              <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+              <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col w-50">
+          <div class="wrapper">
+            <p style="font-size:0.8rem; color:var(--text3); margin-bottom:8px; font-family:var(--mono);">column</p>
+            <div style="display:flex; flex-direction:column; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px; align-items:flex-start;">
+              <div style="width:40px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+              <div style="width:40px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+              <div style="width:40px; height:40px; background:#00b894; border-radius:6px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COMBINED -->
+  <section id="combined">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Կենտրոնացում՝ երկու առանցքներով</h2>
+            <p>Flexbox-ի ամենահայտնի օգտագործումը՝ <strong>երկու առանցքով կենտրոնացում</strong>։ Պարզապես 2 հատկություն՝ և ցանկացած բովանդակություն կենտրոնում է։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">center.css</div>
+            </div>
+            <div class="code-body"><span class="c-comment">/* Կլասիկ՝ բովանդակությունը կենտրոնում */</span>
+<span class="c-tag">.hero</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">justify-content</span>: <span class="c-val">center</span>; <span class="c-comment">/* հորիզոնական */</span>
+  <span class="c-attr">align-items</span>: <span class="c-val">center</span>;     <span class="c-comment">/* ուղղահայաց */</span>
+  <span class="c-attr">height</span>: <span class="c-val">300px</span>;
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper" style="display:flex; justify-content:center; align-items:center; height:200px; background:#1a1a2e; border-radius:12px; color:white;">
+            <div style="text-align:center;">
+              <div style="font-weight:700; font-size:1.2rem; margin-bottom:8px;">Կենտրոնում</div>
+              <div style="font-size:0.85rem; opacity:0.8;">justify-content: center + align-items: center</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FLEX WRAP -->
+  <section id="flex-wrap">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>flex-wrap — Տողափոխություն</h2>
+            <p>Լռելյայն flex տարրերը <strong>սեղմվում են</strong> մեկ տողում։ <code>wrap</code>-ով ավելորդ տարրերը տեղափոխվում են հաջորդ տող։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">wrap.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.container</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">flex-wrap</span>: <span class="c-val">nowrap</span>; <span class="c-comment">/* լռելյայն՝ մեկ տող */</span>
+  <span class="c-attr">flex-wrap</span>: <span class="c-val">wrap</span>;    <span class="c-comment">/* տեղ չլինի՝ նոր տող */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper">
+            <p style="font-size:0.8rem; color:var(--text3); margin-bottom:8px; font-family:var(--mono);">flex-wrap: wrap (նեղ պատկերում)</p>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; padding:12px; background:var(--bg2); border:1px solid var(--border); border-radius:8px; max-width:240px;">
+              <div style="width:60px; height:40px; background:#5b7fff; border-radius:6px;"></div>
+              <div style="width:60px; height:40px; background:#6c5ce7; border-radius:6px;"></div>
+              <div style="width:60px; height:40px; background:#00b894; border-radius:6px;"></div>
+              <div style="width:60px; height:40px; background:#e17055; border-radius:6px;"></div>
+              <div style="width:60px; height:40px; background:#0984e3; border-radius:6px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- GAP -->
+  <section id="gap">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>gap — Բացում տարրերի միջև</h2>
+            <p>Փոխարինում է margin-ի օգտագործումը flex-տարրերի միջև։ Ավելի հարմար է, որովհետև <strong>զերծում է</strong> արտաքին եզրերից՝ ավելացնելով բացում միայն տարրերի <strong>միջև</strong>։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">gap.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.container</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">gap</span>: <span class="c-val">16px</span>;       <span class="c-comment">/* բոլոր կողմերով */</span>
+  <span class="c-attr">gap</span>: <span class="c-val">8px 24px</span>; <span class="c-comment">/* ուղղահայաց հորիզոնական */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ITEM PROPERTIES -->
+  <section id="item-props">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տարրերի հատկություններ</h2>
+            <p>Մինչև հիմա խոսեցինք կոնտեյների մասին։ Այժմ՝ <strong>երեխաները</strong>։ Այս հատկությունները գրվում են ոչ թե կոնտեյներին, այլ <strong>ինքնուրույն տարրերին</strong>։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:24px">
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(244,114,192,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 19l-7-7 7-7m8 14l-7-7 7-7"></path></svg>
+            </div>
+            <h3>order</h3>
+            <p>Փոխում է տարրերի <strong>հերթականությունը</strong>։ Լռելյայն բոլորն ունեն <code>0</code>։ Փոքր թիվը գալիս է առաջ։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(91,168,255,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+            </div>
+            <h3>flex-grow</h3>
+            <p>Որքան <strong>մեծանա</strong> տարրը՝ ազատ տարածքը լցնելու համար։ <code>1</code> = բաժանել հավասար, <code>2</code> = կրկնակի։</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="wrapper theory-card">
+            <div class="theory-icon" style="background:rgba(82,229,160,0.1)">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"></polyline><polyline points="20 10 14 10 14 4"></polyline><line x1="14" y1="10" x2="21" y2="3"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+            </div>
+            <h3>flex-shrink</h3>
+            <p>Որքան <strong>սեղմվի</strong> տարրը, երբ չափը չի բավարարում։ Լռելյայն <code>1</code>։ <code>0</code> = չսեղմվել։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">items.css</div>
+            </div>
+            <div class="code-body"><span class="c-tag">.first</span> {
+  <span class="c-attr">order</span>: <span class="c-val">-1</span>;       <span class="c-comment">/* գալիս է ամեն առաջ */</span>
+  <span class="c-attr">flex-grow</span>: <span class="c-val">2</span>;    <span class="c-comment">/* կրկնակի տարածք */</span>
+}
+
+<span class="c-tag">.last</span> {
+  <span class="c-attr">order</span>: <span class="c-val">1</span>;        <span class="c-comment">/* գալիս է վերջ */</span>
+  <span class="c-attr">flex-shrink</span>: <span class="c-val">0</span>;  <span class="c-comment">/* չի սեղմվում */</span>
+}
+
+<span class="c-tag">.item</span> {
+  <span class="c-attr">align-self</span>: <span class="c-val">flex-end</span>; <span class="c-comment">/* միայն այս տարրն ավելի ներքև */</span>
+}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- TIPS -->
+  <section id="tips">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Խորհուրդներ Flexbox-ի համար</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="margin-top:16px">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>1. Միշտ սկսիր <code>display: flex</code>-ով</strong>, հետո ավելացրու մնացածը։ Առանց դրա մնացած հատկությունները չեն աշխատի։
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>2. <code>justify-content</code></strong> աշխատում է <strong>հիմնական առանցքով</strong> (row = հորիզոնական, column = ուղղահայաց)։ <strong><code>align-items</code></strong>՝ <strong>ընդհանուր առանցքով</strong> (հակառակը)։
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>3. <code>align-items</code> չի աշխատում</strong>, եթե կոնտեյներն ունի <code>height: auto</code> (լռելյայն)։ Տուր <code>height</code> կամ <code>min-height</code>։
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>4. <code>gap</code>-ը ավելի լավ է</strong> քան margin-ը flex-տարրերի միջև, որովհետև չի ստեղծում արտաքին ծայրամասեր։
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper note">
+            <strong>5. Chrome DevTools-ը ցույց է տալիս</strong> flex-առանցքը (F12 → Elements → կտտացրիր flex կոնտեյներին → see orange lines)։
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICE -->
+  <section id="practice">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Դասի ընթացքում կգրենք</h2>
+            <p>Ստեղծիր 3 card ռяд՝ flexbox-ով և կենտրոնացրու landing page-ի hero բաժինը։</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper code-block">
+            <div class="code-bar">
+              <div class="code-dot" style="background:#ff6058"></div>
+              <div class="code-dot" style="background:#ffbd2e"></div>
+              <div class="code-dot" style="background:#28c840"></div>
+              <div class="code-filename">style.css — Պրակտիկա</div>
+            </div>
+            <div class="code-body"><span class="c-comment">/* 1. Hero կենտրոնում */</span>
+<span class="c-tag">#hero</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">flex-direction</span>: <span class="c-val">column</span>;
+  <span class="c-attr">justify-content</span>: <span class="c-val">center</span>;
+  <span class="c-attr">align-items</span>: <span class="c-val">center</span>;
+  <span class="c-attr">height</span>: <span class="c-val">400px</span>;
+}
+
+<span class="c-comment">/* 2. Cards ռяд */</span>
+<span class="c-tag">.cards</span> {
+  <span class="c-attr">display</span>: <span class="c-val">flex</span>;
+  <span class="c-attr">justify-content</span>: <span class="c-val">space-between</span>;
+  <span class="c-attr">gap</span>: <span class="c-val">24px</span>;
+  <span class="c-attr">padding</span>: <span class="c-val">40px</span>;
+}
+
+<span class="c-comment">/* 3. Մեկ card */</span>
+<span class="c-tag">.card</span> {
+  <span class="c-attr">flex</span>: <span class="c-val">1</span>;
+  <span class="c-attr">padding</span>: <span class="c-val">24px</span>;
+  <span class="c-attr">border</span>: <span class="c-val">1px solid #ddd</span>;
+  <span class="c-attr">border-radius</span>: <span class="c-val">8px</span>;
+}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOMEWORK -->
+  <section id="homework">
+    <div class="container">
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper">
+            <h2>Տնային աշխատանք</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col w-100">
+          <div class="wrapper hw-section">
+            <div class="hw-title">Տնային աշխատանք — Flexbox Landing Page</div>
+            <div class="hw-sub">Վերցրու քո Landing Page-ը և վերափոխիր այն՝ օգտագործելով Flexbox։</div>
+            <div class="hw-steps">
+              <div class="hw-step">
+                <div class="hw-num">01</div>
+                <div class="hw-step-text">#hero-ին տուր <code>display: flex;</code>, <code>flex-direction: column;</code> և <code>justify-content: center;</code>՝ բովանդակությունը ուղղահայաց կենտրոնում դնելու համար։</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">02</div>
+                <div class="hw-step-text">Nav-ին (կամ ul-ին) տուր <code>display: flex;</code>, <code>justify-content: center;</code> և <code>gap: 24px;</code>՝ հղումները կողք կողքի դնելու համար։</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">03</div>
+                <div class="hw-step-text">Ստեղծիր <code>.cards</code> կոնտեյներ՝ <code>display: flex;</code> և <code>justify-content: space-between;</code>։</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">04</div>
+                <div class="hw-step-text">Card-երին տուր <code>flex: 1;</code>՝ հավասարաչափ բաշխման համար, և <code>padding: 24px;</code>։</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">05</div>
+                <div class="hw-step-text">Footer-ին տուր <code>display: flex;</code>, <code>justify-content: space-between;</code> և <code>align-items: center;</code>։</div>
+              </div>
+              <div class="hw-step">
+                <div class="hw-num">06</div>
+                <div class="hw-step-text"><strong>Սեփական ոճ.</strong> Ավելացրու <strong>minimum 2</strong> հատկություն՝ օգտագործելով միայն այս դասում սովորածը (display, flex-direction, flex-wrap, justify-content, align-items, align-self, gap, flex, order, flex-grow, flex-shrink)։</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="divider"></div>
+  <footer class="doc-footer">
+    <div class="container">
+      <div class="footer-name">Web Development Course · <span>Դաս 09</span></div>
+      <div class="footer-name">Մերի Վարդանյան · <span>2025</span></div>
+    </div>
+  </footer>
+
+</body>
+</html>
